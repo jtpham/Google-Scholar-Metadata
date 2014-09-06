@@ -11,4 +11,5 @@ one labeled "Get Metadata!" to retrieve the metadata of the URL. Once the latter
 and publication details (year, publisher, source, and volume) are returned. This is not limited to just the four given images;
 the query textbox can handle any valid URL or text-based query input. The information retrieved comes from a single matching result from many (the best-matched article).
 
-Library used: jQuery 2.x (edge)
+Written in: HTML, CSS, JavaScript, jQuery
+Library required: jQuery 2.x (edge)
