@@ -1,0 +1,10 @@
+body {
+    font-family: Arial;
+}
+input {
+    font-family: Arial;
+    font-size: 13px;
+}
+#error {
+    font-style: italic;
+}
