@@ -1,0 +1,31 @@
+<!-- Returns metadata using the Google Scholar API. Each image is associated with a unique URL which links to a research article; hovering over an image will display the subject of the image and the URL itself. Each image also acts as a button; when selected, the URL is sent to the query textbox. Underneath the query textbox are two buttons: one labeled "Clear" to clear the textbox and one labeled "Get Metadata!" to retrieve the metadata of the URL. Once the latter is selected, the article's citation, author(s), and publication details (year, publisher, source, and volume) are returned. This is not limited to just the four given images; the query textbox can handle any valid URL or text-based query input. The information retrieved comes from a single matching result from many (the best-matched article). -->
+<body>
+    <center>
+        <!-- Image buttons -->
+        <button onclick="change()">
+            <img src="http://s.hswstatic.com/gif/great-white-shark-1.jpg" height="150" width="150" id='gw' title="Great White Shark http://www.nature.com/nature/journal/v412/n6843/full/412139a0.html">
+        </button>
+        <button onclick="change()">
+            <img src="http://www.factzoo.com/sites/all/img/fish/sharks-rays/smooth-hammerhead-shark-school.jpg" height="150" width="150" id='hh' title="Hammerhead Shark http://onlinelibrary.wiley.com/doi/10.1111/j.1095-8649.1988.tb05520.x/abstract">
+        </button>
+        <button onclick="change()">
+            <img src="http://assets.worldwildlife.org/photos/2099/images/hero_full/Whale-Shark-Homepage.jpg?1345610209" height="150" width="150" id='ws' title="Whale Shark http://www.springerlink.com/index/M21R2608U3PV5451.pdf">
+        </button>
+        <button onclick="change()">
+            <img src="http://www.sharksider.com/images/goblin-shark-1.jpg" height="150" width="150" id='gs' title="Goblin Shark http://www.bioone.org/doi/abs/10.1656/1528-7092(2002)001[0189:FROTGS]2.0.CO;2">
+        </button>
+        <p>&nbsp;</p>
+        <!-- Google Scholar API -->
+        <form id="api" action="https://www.googleapis.com/scribe/v1/research">
+            <input type="hidden" name="key" value="AIzaSyDqVYORLCUXxSv7zneerIgC2UYMnxvPeqQ">
+            <input type="hidden" name="dataset" value="paper">
+            <!-- Query textbox and control buttons -->
+            <input name="query" id="input" size="80" value="">
+            <button onclick="change()" id="clear">Clear</button>
+            <input type="submit" value="Get Metadata!">
+    </center>
+    <p>&nbsp;</p>
+    <!-- Layout -->
+    <div id="citation"></div>
+    <dl id="details"></dl>
+    <div id="error"></div>
